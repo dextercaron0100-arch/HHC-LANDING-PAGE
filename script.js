@@ -229,3 +229,45 @@ if (statsSection) {
   
   statsObserver.observe(statsSection);
 }
+
+// Contact form with AJAX submission
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const submitBtn = document.getElementById('submitBtn');
+    const formSuccess = document.getElementById('formSuccess');
+    const formNote = document.getElementById('formNote');
+    
+    // Disable button and show loading
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = 'Sending... <span>⏳</span>';
+    
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        // Success
+        contactForm.reset();
+        formNote.style.display = 'none';
+        formSuccess.style.display = 'block';
+        submitBtn.innerHTML = 'Sent! <span>✓</span>';
+        submitBtn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      // Error
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = 'Submit inquiry <span>📨</span>';
+      alert('Oops! Something went wrong. Please try again.');
+    }
+  });
+}

@@ -390,7 +390,7 @@
             </div>
           </div>
 
-          <form class="contact-form reveal delay-2" action="https://formspree.io/f/mjgevzpj" method="POST">
+          <form class="contact-form reveal delay-2" id="contactForm" action="https://formspree.io/f/mjgevzpj" method="POST">
             <div class="field">
               <label for="name">Full Name</label>
               <input id="name" name="name" type="text" placeholder="Juan Dela Cruz" required />
@@ -415,13 +415,16 @@
               <label for="message">Tell us about your plans</label>
               <textarea id="message" name="message" rows="4" placeholder="Share your timeline, preferred concepts, and questions." required></textarea>
             </div>
-            <button type="submit" class="btn-primary">
+            <button type="submit" class="btn-primary" id="submitBtn">
               Submit inquiry
               <span>📨</span>
             </button>
             <p class="contact-note" id="formNote">
               We'll get back to you within 24-48 hours.
             </p>
+            <div id="formSuccess" style="display:none; background: linear-gradient(135deg, #22c55e, #16a34a); color: #fff; padding: 1.2rem; border-radius: 12px; text-align: center; margin-top: 1rem;">
+              <strong>Thank you!</strong><br>Your inquiry has been sent. We'll contact you within 24-48 hours.
+            </div>
           </form>
         </div>
       </div>
