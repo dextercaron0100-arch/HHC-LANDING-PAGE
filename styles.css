@@ -980,9 +980,9 @@ button {
    FOOTER
 --------------------- */
 .site-footer {
-  border-top: 1px solid rgba(148, 163, 184, 0.4);
-  padding-block: 1.8rem 2.4rem;
-  background: rgba(15, 23, 42, 0.98);
+  border-top: 3px solid var(--accent);
+  padding-block: 1.2rem;
+  background: #1a1a2e;
 }
 
 .footer-inner {
@@ -998,14 +998,34 @@ button {
 .footer-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.9rem;
+  gap: 1.5rem;
 }
 
 .footer-links a {
-  color: var(--muted);
+  color: #4a9eff;
+  transition: color var(--transition-fast);
 }
 
 .footer-links a:hover {
+  color: var(--accent);
+}
+
+.footer-copyright {
+  color: #b8860b;
+  font-size: 0.85rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.footer-social a {
+  color: var(--muted);
+  transition: color var(--transition-fast);
+}
+
+.footer-social a:hover {
   color: var(--text);
 }
 
