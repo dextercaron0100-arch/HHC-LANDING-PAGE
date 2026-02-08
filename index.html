@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>HHC FRANCHISE HUB</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#hero" class="nav-brand">
+        <div class="nav-logo" aria-hidden="true"></div>
+        <div class="nav-brand-text">
+          <span>HHC FRANCHISE HUB</span>
+          <span>Business for the Filipino</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About Us</a></li>
+        <li><a href="#franchises" class="nav-link">Franchises</a></li>
+        <li><a href="#stories" class="nav-link">Stories</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="#franchises" class="btn-outline">View Opportunities</a>
+        <a href="#contact" class="btn-primary">
+          Franchise Now
+          <span>→</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero section" id="hero">
+      <!-- Hero Slider -->
+      <div class="hero-slider-wrapper">
+        <div class="hero-slider" id="heroSlider">
+          <div class="hero-slide active"></div>
+          <div class="hero-slide"></div>
+          <div class="hero-slide"></div>
+          <div class="hero-slide"></div>
+          <div class="hero-slide"></div>
+        </div>
+        <div class="slider-arrows">
+          <button class="slider-arrow prev" id="prevSlide"><span>&#10094;</span></button>
+          <button class="slider-arrow next" id="nextSlide"><span>&#10095;</span></button>
+        </div>
+      </div>
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <h1 class="hero-title">
+            HHC <span>FRANCHISE</span> HUB
+          </h1>
+          <p class="hero-text">
+            Welcome to HHC FRANCHISE HUB! Your one-stop shop for all things related to the franchise business.
+          </p>
+          <p class="hero-text hero-text-bold">
+            With a wide range of tested and moneymaking franchise business options and expert guidance from our experienced team, we are here to help you navigate the world of franchising and build a successful, profitable business.
+          </p>
+          <p class="hero-text-thanks">
+            Thank you for choosing HHC FRANCHISE HUB - let's get started!
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn-gold">
+              Franchise Now
+            </a>
+            <a href="#about" class="hero-link">
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AWARDS / STORIES -->
+    <section class="section" id="about">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="section-kicker">Awards & Recognition</p>
+          <h2 class="section-title">Recognized by trusted award-giving bodies.</h2>
+          <p class="section-subtitle">
+            Our brands and leadership have been honored by local and international organizations for excellence in business, service, and innovation.
+          </p>
+        </header>
+
+        <div class="awards-grid">
+          <article class="award-card reveal delay-1">
+            <div class="award-title">
+              Golden Globe Awards
+              <span class="award-pill">Business Excellence</span>
+            </div>
+            <p class="award-text">
+              Recognition for organizations that consistently raise the bar in service, growth, and customer satisfaction in their industries.
+            </p>
+            <a href="#stories" class="award-link">
+              Learn more
+              <span>→</span>
+            </a>
+          </article>
+
+          <article class="award-card reveal delay-2">
+            <div class="award-title">
+              Asia Leaders Awards
+              <span class="award-pill">Regional Impact</span>
+            </div>
+            <p class="award-text">
+              Celebrating leaders and companies that help position the Philippines as a strong player in the Asian business landscape.
+            </p>
+            <a href="#stories" class="award-link">
+              See the story
+              <span>→</span>
+            </a>
+          </article>
+
+          <article class="award-card reveal delay-3">
+            <div class="award-title">
+              Trusted Brand Honors
+              <span class="award-pill">Consumer Choice</span>
+            </div>
+            <p class="award-text">
+              Awards given to brands consistently chosen by Filipino consumers for quality and reliability over the years.
+            </p>
+            <a href="#stories" class="award-link">
+              View features
+              <span>→</span>
+            </a>
+          </article>
+
+          <article class="award-card reveal delay-3">
+            <div class="award-title">
+              Communications Excellence
+              <span class="award-pill">Corporate Award</span>
+            </div>
+            <p class="award-text">
+              Distinctions for clear, effective communication that helps grow businesses and create positive impact in communities.
+            </p>
+            <a href="#stories" class="award-link">
+              Read more
+              <span>→</span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FRANCHISE OPPORTUNITIES -->
+    <section class="section" id="franchises">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="section-kicker">Franchise Opportunities</p>
+          <h2 class="section-title">Choose a concept that fits your goals.</h2>
+          <p class="section-subtitle franchise-intro">
+            Food carts, wellness products, or digital services — our portfolio is designed to match different budgets, locations, and lifestyles.
+          </p>
+        </header>
+
+        <div class="franchise-tabs">
+          <button class="tab-btn active" data-tab="all">All</button>
+          <button class="tab-btn" data-tab="food">Food</button>
+          <button class="tab-btn" data-tab="wellness">Health & Wellness</button>
+          <button class="tab-btn" data-tab="digital">Digital</button>
+        </div>
+
+        <div class="franchise-grid">
+          <!-- Food 1 -->
+          <article class="franchise-card reveal delay-1" data-category="food">
+            <div class="franchise-img" style="background-image: linear-gradient(135deg, #f97316, #b91c1c);"></div>
+            <div class="franchise-content">
+              <p class="franchise-tag">Food Franchise</p>
+              <h3 class="franchise-title">Siomai King–style Food Cart</h3>
+              <p class="franchise-text">
+                A high-volume siomai concept ideal for terminals, schools, and busy streets. Simple operations, small footprint, big appetite appeal.
+              </p>
+              <div class="franchise-meta">
+                <span><strong>Best for:</strong> High foot-traffic areas</span>
+                <a href="#contact" class="link-pill">
+                  Get package details
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Food 2 -->
+          <article class="franchise-card reveal delay-2" data-category="food">
+            <div class="franchise-img" style="background-image: linear-gradient(135deg, #22c55e, #a855f7);"></div>
+            <div class="franchise-content">
+              <p class="franchise-tag">Food Franchise</p>
+              <h3 class="franchise-title">Milk Tea & Drinks Kiosk</h3>
+              <p class="franchise-text">
+                Trendy drink concept with a flexible menu of milk tea, fruit teas, and specialty beverages. Perfect for malls and campuses.
+              </p>
+              <div class="franchise-meta">
+                <span><strong>Best for:</strong> Malls & lifestyle hubs</span>
+                <a href="#contact" class="link-pill">
+                  Inquire now
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Food 3 -->
+          <article class="franchise-card reveal delay-3" data-category="food">
+            <div class="franchise-img" style="background-image: linear-gradient(135deg, #fb7185, #f97316);"></div>
+            <div class="franchise-content">
+              <p class="franchise-tag">Food Franchise</p>
+              <h3 class="franchise-title">Burgers & Snacks Stand</h3>
+              <p class="franchise-text">
+                Burger and fries concept tailored for quick service and repeat customers, with options for bundle promos and value meals.
+              </p>
+              <div class="franchise-meta">
+                <span><strong>Best for:</strong> Communities & terminals</span>
+                <a href="#contact" class="link-pill">
+                  Request full menu
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Wellness -->
+          <article class="franchise-card reveal delay-1" data-category="wellness">
+            <div class="franchise-img" style="background-image: linear-gradient(135deg, #0ea5e9, #22c55e);"></div>
+            <div class="franchise-content">
+              <p class="franchise-tag">Health & Wellness</p>
+              <h3 class="franchise-title">Wellness Products Distribution</h3>
+              <p class="franchise-text">
+                A portfolio of health, beauty, and wellness products that can be sold in physical outlets or online, with training and marketing tools included.
+              </p>
+              <div class="franchise-meta">
+                <span><strong>Best for:</strong> Home-based & online sellers</span>
+                <a href="#contact" class="link-pill">
+                  See product list
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Digital -->
+          <article class="franchise-card reveal delay-2" data-category="digital">
+            <div class="franchise-img" style="background-image: linear-gradient(135deg, #6366f1, #0ea5e9);"></div>
+            <div class="franchise-content">
+              <p class="franchise-tag">Digital Franchise</p>
+              <h3 class="franchise-title">Delivery & Super App Franchise</h3>
+              <p class="franchise-text">
+                Build a network in your city with a Filipino-owned delivery and services platform. Earn from bookings and partner onboarding.
+              </p>
+              <div class="franchise-meta">
+                <span><strong>Best for:</strong> Tech-savvy entrepreneurs</span>
+                <a href="#contact" class="link-pill">
+                  Learn how it works
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- STATS STRIP -->
+        <div class="stats-strip reveal delay-2">
+          <div class="stat-item">
+            <div class="stat-number" data-value="1,000+">0</div>
+            <div class="stat-label">Food Franchises</div>
+            <p class="stat-note">Operated by Filipino franchisees nationwide.</p>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-value="10,000+">0</div>
+            <div class="stat-label">Digital Partners</div>
+            <p class="stat-note">Earn from online delivery and service bookings.</p>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-value="30,000+">0</div>
+            <div class="stat-label">Wellness Distributors</div>
+            <p class="stat-note">Growing a global network of entrepreneurs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AS SEEN ON / PARTNERS -->
+    <section class="section" id="stories">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="section-kicker">Media & Partners</p>
+          <h2 class="section-title">Featured in the news, trusted by brands.</h2>
+          <p class="section-subtitle">
+            HHC FRANCHISE HUB collaborates with companies, media outlets, and communities that share our vision of uplifting Filipino entrepreneurship.
+          </p>
+        </header>
+
+        <div class="reveal delay-1">
+          <p style="text-align:center; font-size:0.88rem; color:var(--muted); margin-bottom:0.6rem;">
+            As seen on
+          </p>
+          <div class="logo-row">
+            <div class="logo-pill">Business Daily</div>
+            <div class="logo-pill">Metro News PH</div>
+            <div class="logo-pill">Asia Business Review</div>
+            <div class="logo-pill">Entrepreneur PH</div>
+          </div>
+        </div>
+
+        <div class="partners-grid">
+          <div class="partners-text reveal delay-2">
+            <h3 style="font-size:1.05rem; margin-bottom:0.4rem;">Who we work with</h3>
+            <p>
+              We partner with entrepreneurs, mall operators, community leaders, and corporate groups who believe in long-term, sustainable growth.
+            </p>
+            <p style="margin-top:0.6rem;">
+              By aligning with partners that share our values — integrity, service, and opportunity for more Filipinos — we're able to launch and support franchises across the country and abroad.
+            </p>
+          </div>
+
+          <div class="brand-grid reveal delay-3">
+            <div class="brand-card">Mall Partner</div>
+            <div class="brand-card">Fuel Station</div>
+            <div class="brand-card">Condo Lobby</div>
+            <div class="brand-card">Transport Hub</div>
+            <div class="brand-card">Overseas Partner</div>
+            <div class="brand-card">Community Center</div>
+            <div class="brand-card">Office Building</div>
+            <div class="brand-card">Tourist Spot</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEALS OF APPROVAL -->
+    <section class="section">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="section-kicker">Seals of Approval</p>
+          <h2 class="section-title">Third-party recognition of quality and trust.</h2>
+          <p class="section-subtitle">
+            Independent organizations have reviewed our concepts, operations, and products, granting seals that reflect our commitment to high standards.
+          </p>
+        </header>
+
+        <div class="seal-grid reveal delay-1">
+          <div class="seal-card">Business Excellence Seal</div>
+          <div class="seal-card">Trusted Brand Mark</div>
+          <div class="seal-card">Service Quality Award</div>
+          <div class="seal-card">Innovation Seal</div>
+          <div class="seal-card">Customer Care Badge</div>
+          <div class="seal-card">Compliance Certified</div>
+          <div class="seal-card">Community Impact</div>
+          <div class="seal-card">Philippine Franchise Seal</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="section-kicker">Contact Us</p>
+          <h2 class="section-title">Ready to explore a franchise?</h2>
+          <p class="section-subtitle">
+            Share a few details and our franchise consultants will get in touch with orientation schedules, package options, and next steps.
+          </p>
+        </header>
+
+        <div class="contact-grid">
+          <div class="contact-card reveal delay-1">
+            <h3>Let's talk about your plans</h3>
+            <p>
+              Tell us where you're based, your target budget, and what kind of business you'd like to build — we'll recommend a concept that fits.
+            </p>
+            <div class="contact-meta">
+              <span><strong>Hotline:</strong> +63 9XX XXX XXXX</span>
+              <span><strong>Email:</strong> franchise@example.com</span>
+              <span><strong>Office:</strong> Your full address here, Philippines</span>
+              <span><strong>Office hours:</strong> Mon–Sat, 9 AM–6 PM</span>
+            </div>
+          </div>
+
+          <form class="contact-form reveal delay-2">
+            <div class="field">
+              <label for="name">Full Name</label>
+              <input id="name" name="name" type="text" placeholder="Juan Dela Cruz" required />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" required />
+            </div>
+            <div class="field">
+              <label for="phone">Mobile Number</label>
+              <input id="phone" name="phone" type="tel" placeholder="+63 9XX XXX XXXX" />
+            </div>
+            <div class="field">
+              <label for="location">Preferred Location</label>
+              <input id="location" name="location" type="text" placeholder="City / province" />
+            </div>
+            <div class="field">
+              <label for="budget">Estimated Budget</label>
+              <input id="budget" name="budget" type="text" placeholder="e.g. ₱300,000 – ₱500,000" />
+            </div>
+            <div class="field">
+              <label for="message">Tell us about your plans</label>
+              <textarea id="message" name="message" rows="4" placeholder="Share your timeline, preferred concepts, and questions." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary">
+              Submit inquiry
+              <span>📨</span>
+            </button>
+            <p class="contact-note" id="formNote">
+              This demo form does not send emails yet. Connect it to your backend or a service like Formspree / Zapier to receive submissions.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="yearSpan"></span> HHC FRANCHISE HUB — All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#hero">Back to top</a>
+        <a href="#franchises">Franchises</a>
+        <a href="#contact">Franchise Now</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script>
+    // Set current year in footer
+    const yearSpan = document.getElementById('yearSpan');
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+  </script>
+</body>
+</html>
