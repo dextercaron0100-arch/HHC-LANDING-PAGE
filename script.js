@@ -229,13 +229,3 @@ if (statsSection) {
   
   statsObserver.observe(statsSection);
 }
-
-// Contact form
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('Thank you for your interest! We will contact you shortly.');
-    contactForm.reset();
-  });
-}
