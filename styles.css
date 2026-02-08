@@ -411,79 +411,6 @@ button {
   transform: scale(1.1);
 }
 
-/* Arrows Navigation */
-.slider-arrows {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  transform: translateY(-50%);
-  display: flex;
-  justify-content: space-between;
-  padding: 0 2rem;
-  z-index: 5;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.hero:hover .slider-arrows {
-  opacity: 1;
-}
-
-.slider-arrow {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: rgba(15, 23, 42, 0.6);
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.15);
-  color: var(--text);
-  font-size: 1.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  pointer-events: auto;
-  position: relative;
-  overflow: hidden;
-}
-
-.slider-arrow::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  border-radius: 50%;
-}
-
-.slider-arrow span {
-  position: relative;
-  z-index: 1;
-  transition: transform 0.3s ease;
-}
-
-.slider-arrow:hover {
-  border-color: var(--accent);
-  transform: scale(1.15);
-  box-shadow: 0 10px 40px rgba(250, 204, 21, 0.3);
-}
-
-.slider-arrow:hover::before {
-  opacity: 1;
-}
-
-.slider-arrow:hover span {
-  transform: scale(1.1);
-}
-
-.slider-arrow:active {
-  transform: scale(0.95);
-}
-
 /* Slide Counter */
 .slide-counter {
   position: absolute;
@@ -532,6 +459,11 @@ button {
   max-width: 800px;
   margin: 0 auto;
   min-height: 100vh;
+}
+
+.hero-content {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .hero-title {
@@ -894,66 +826,207 @@ button {
 --------------------- */
 .contact-grid {
   display: grid;
-  gap: 2rem;
-  align-items: flex-start;
-  margin-top: 2rem;
+  gap: 2.5rem;
+  align-items: stretch;
+  margin-top: 2.5rem;
 }
 
 .contact-card {
+  position: relative;
   border-radius: var(--radius-lg);
-  padding: 1.6rem 1.4rem;
-  border: 1px solid var(--border-subtle);
-  background: radial-gradient(circle at top left, rgba(248, 250, 252, 0.07), #020617 65%);
-  box-shadow: var(--shadow-soft);
+  padding: 2rem 1.8rem;
+  border: 1px solid rgba(250, 204, 21, 0.2);
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(2, 6, 23, 0.98));
+  box-shadow: 
+    0 4px 24px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(250, 204, 21, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-card-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 30%, rgba(250, 204, 21, 0.08), transparent 50%);
+  pointer-events: none;
+}
+
+.contact-card-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: #111827;
+  box-shadow: 0 8px 24px rgba(250, 204, 21, 0.25);
 }
 
 .contact-card h3 {
-  font-size: 1.05rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.35rem;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(135deg, #fff, var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .contact-card p {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: var(--muted);
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
 }
 
 .contact-meta {
-  font-size: 0.86rem;
-  color: var(--muted);
-  display: grid;
-  gap: 0.4rem;
-  margin-top: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: auto;
 }
 
-.contact-meta span strong {
+.contact-meta-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.contact-meta-item:hover {
+  background: rgba(250, 204, 21, 0.05);
+  border-color: rgba(250, 204, 21, 0.15);
+  transform: translateX(4px);
+}
+
+.contact-meta-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(250, 204, 21, 0.15), rgba(250, 204, 21, 0.05));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.contact-meta-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.contact-meta-label {
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contact-meta-value {
+  font-size: 0.9rem;
   color: var(--text);
+  font-weight: 500;
+}
+
+.contact-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(250, 204, 21, 0.1), rgba(250, 204, 21, 0.05));
+  border: 1px solid rgba(250, 204, 21, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-cta:hover {
+  background: linear-gradient(135deg, rgba(250, 204, 21, 0.15), rgba(250, 204, 21, 0.08));
+  transform: translateY(-2px);
+}
+
+.contact-cta-text {
+  font-size: 0.9rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.contact-cta-arrow {
+  font-size: 1.2rem;
+  color: var(--accent);
+  transition: transform 0.3s ease;
+}
+
+.contact-cta:hover .contact-cta-arrow {
+  transform: translateX(4px);
 }
 
 .contact-form {
   display: grid;
-  gap: 0.9rem;
+  gap: 1.1rem;
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(2, 6, 23, 0.98));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 4px 24px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.form-header {
+  margin-bottom: 0.5rem;
+}
+
+.form-header h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.35rem;
+  background: linear-gradient(135deg, #fff, var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.form-header p {
+  font-size: 0.85rem;
+  color: var(--muted);
 }
 
 .field {
   display: grid;
-  gap: 0.25rem;
+  gap: 0.4rem;
   font-size: 0.85rem;
 }
 
 .field label {
   color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
 .field input,
 .field textarea {
-  border-radius: 0.9rem;
-  border: 1px solid rgba(148, 163, 184, 0.8);
-  background: rgba(15, 23, 42, 0.9);
-  padding: 0.6rem 0.8rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.85rem 1rem;
   color: var(--text);
   outline: none;
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+  transition: all 0.3s ease;
   font: inherit;
   resize: vertical;
   min-height: 0;
@@ -961,19 +1034,21 @@ button {
 
 .field input::placeholder,
 .field textarea::placeholder {
-  color: rgba(148, 163, 184, 0.7);
+  color: rgba(148, 163, 184, 0.5);
 }
 
 .field input:focus,
 .field textarea:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.5);
-  transform: translateY(-1px);
+  background: rgba(250, 204, 21, 0.03);
+  box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.1);
 }
 
 .contact-note {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: var(--muted);
+  text-align: center;
+  margin-top: 0.5rem;
 }
 
 /* --------------------
@@ -1027,40 +1102,6 @@ button {
 
 .footer-social a:hover {
   color: var(--text);
-}
-
-/* --------------------
-   BACK TO TOP
---------------------- */
-.back-to-top {
-  position: fixed;
-  right: 1.2rem;
-  bottom: 1.3rem;
-  width: 40px;
-  height: 40px;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(130deg, var(--primary), var(--accent));
-  color: #111827;
-  font-size: 1.1rem;
-  box-shadow: 0 16px 34px rgba(15, 23, 42, 0.9);
-  opacity: 0;
-  transform: translateY(12px);
-  pointer-events: none;
-  transition: opacity var(--transition-med), transform var(--transition-med), filter var(--transition-fast);
-  z-index: 25;
-}
-
-.back-to-top.visible {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.back-to-top:hover {
-  filter: brightness(1.1);
 }
 
 /* --------------------
@@ -1170,15 +1211,6 @@ button {
   .franchise-card {
     grid-template-columns: minmax(0, 1fr);
   }
-
-  .slider-arrows {
-    opacity: 1;
-  }
-
-  .slider-arrow {
-    width: 46px;
-    height: 46px;
-  }
 }
 
 @media (max-width: 520px) {
@@ -1191,17 +1223,6 @@ button {
   .hero-text-bold,
   .hero-text-thanks {
     font-size: 0.9rem;
-  }
-
-  .slider-arrows {
-    padding: 0 1rem;
-    opacity: 1;
-  }
-
-  .slider-arrow {
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
   }
 
   .slider-dots {
@@ -1236,4 +1257,100 @@ button {
     flex: 1 1 calc(50% - 1rem);
     justify-content: center;
   }
+}
+
+/* From Uiverse.io by wilsondesouza - Social Icons */
+.example-2 {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+.example-2 .icon-content {
+  margin: 0 10px;
+  position: relative;
+}
+.example-2 .icon-content .tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.example-2 .icon-content:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -50px;
+}
+.example-2 .icon-content a {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #4d4d4d;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.example-2 .icon-content a:hover {
+  box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+}
+.example-2 .icon-content a svg {
+  position: relative;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+}
+.example-2 .icon-content a:hover {
+  color: white;
+}
+.example-2 .icon-content a .filled {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+}
+.example-2 .icon-content a:hover .filled {
+  height: 100%;
+}
+
+.example-2 .icon-content a[data-social="whatsapp"] .filled,
+.example-2 .icon-content a[data-social="whatsapp"] ~ .tooltip {
+  background-color: #128c7e;
+}
+
+.example-2 .icon-content a[data-social="facebook"] .filled,
+.example-2 .icon-content a[data-social="facebook"] ~ .tooltip {
+  background-color: #3b5998;
+}
+.example-2 .icon-content a[data-social="instagram"] .filled,
+.example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
+  background: linear-gradient(
+    45deg,
+    #405de6,
+    #5b51db,
+    #b33ab4,
+    #c135b4,
+    #e1306c,
+    #fd1f1f
+  );
+}
+.example-2 .icon-content a[data-social="youtube"] .filled,
+.example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
+  background-color: #ff0000;
 }

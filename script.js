@@ -2,13 +2,11 @@
 const heroSlider = {
   slides: document.querySelectorAll('.hero-slide'),
   dots: document.querySelectorAll('.slider-dot'),
-  prevBtn: document.querySelector('.slider-arrow.prev'),
-  nextBtn: document.querySelector('.slider-arrow.next'),
   progressBar: document.querySelector('.slider-progress-bar'),
   currentDisplay: document.querySelector('.slide-counter .current'),
   currentSlide: 0,
   slideInterval: null,
-  slideDuration: 6000,
+  slideDuration: 4000,
   isAnimating: false,
 
   init() {
@@ -85,20 +83,6 @@ const heroSlider = {
   },
 
   bindEvents() {
-    if (this.prevBtn) {
-      this.prevBtn.addEventListener('click', () => {
-        this.prevSlide();
-        this.startAutoSlide();
-      });
-    }
-
-    if (this.nextBtn) {
-      this.nextBtn.addEventListener('click', () => {
-        this.nextSlide();
-        this.startAutoSlide();
-      });
-    }
-
     this.dots.forEach((dot, index) => {
       dot.addEventListener('click', () => {
         this.goToSlide(index);
@@ -176,17 +160,6 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 
 reveals.forEach(el => revealObserver.observe(el));
-
-// Back to top
-const backToTop = document.querySelector('.back-to-top');
-if (backToTop) {
-  document.addEventListener('scroll', () => {
-    backToTop.classList.toggle('visible', window.scrollY > 400);
-  });
-  backToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-}
 
 // Animate stats
 const statNumbers = document.querySelectorAll('.stat-number');
