@@ -1981,3 +1981,140 @@ button {
 .example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
   background-color: #ff0000;
 }
+
+/* --------------------
+   FRANCHISE LANDING PAGES
+--------------------- */
+.franchise-hero {
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.bigstop-hero {
+  background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 50%, #1e3a5f 100%);
+}
+
+.pharmacy-hero {
+  background: linear-gradient(135deg, #1a5f3d 0%, #2d8760 50%, #1a5f3d 100%);
+}
+
+.siomai-hero {
+  background: linear-gradient(135deg, #8b4513 0%, #cd853f 50%, #8b4513 100%);
+}
+
+.chickn-hero {
+  background: linear-gradient(135deg, #b8860b 0%, #daa520 50%, #b8860b 100%);
+}
+
+.noodle-hero {
+  background: linear-gradient(135deg, #8b0000 0%, #cd5c5c 50%, #8b0000 100%);
+}
+
+.franchise-detail-grid {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.franchise-info {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+}
+
+.franchise-tagline {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.franchise-description {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.franchise-highlights {
+  margin-bottom: 2rem;
+}
+
+.franchise-highlights h3 {
+  font-size: 1.2rem;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.highlight-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.75rem;
+}
+
+.highlight-list li {
+  color: var(--muted);
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.highlight-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.franchise-investment {
+  background: rgba(218, 165, 32, 0.1);
+  border: 1px solid rgba(218, 165, 32, 0.2);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.franchise-investment h3 {
+  font-size: 1.1rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.investment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.investment-item {
+  text-align: center;
+}
+
+.investment-label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+}
+
+.investment-value {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.franchise-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.05rem;
+}
