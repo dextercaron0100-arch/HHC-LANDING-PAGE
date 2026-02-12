@@ -112,14 +112,6 @@ button {
   gap: 0.6rem;
 }
 
-.nav-logo {
-  width: 38px;
-  height: 38px;
-  border-radius: 999px;
-  background: radial-gradient(circle at 30% 0, #facc15, #ef4444 50%, #b91c1c 80%);
-  box-shadow: 0 0 18px rgba(248, 250, 252, 0.5);
-}
-
 .nav-brand-text {
   display: flex;
   flex-direction: column;
