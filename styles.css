@@ -547,47 +547,17 @@ button {
 /* --------------------
    AWARDS
 --------------------- */
-.awards-grid {
-  display: grid;
-  gap: 1.4rem;
-}
-
-.award-card {
+.award-banner {
+  margin-top: 2rem;
   border-radius: var(--radius-lg);
-  background: var(--bg-alt);
-  border: 1px solid var(--border-subtle);
-  padding: 1.4rem 1.3rem 1.2rem;
-  display: grid;
-  gap: 0.4rem;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
-.award-title {
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.award-pill {
-  font-size: 0.7rem;
-  padding: 0.08rem 0.5rem;
-  border-radius: 999px;
-  background: rgba(248, 250, 252, 0.08);
-  color: var(--accent);
-}
-
-.award-text {
-  font-size: 0.86rem;
-  color: var(--muted);
-}
-
-.award-link {
-  font-size: 0.8rem;
-  color: var(--accent);
-  margin-top: 0.2rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
+.award-banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* --------------------
@@ -1121,10 +1091,6 @@ button {
    RESPONSIVE
 --------------------- */
 @media (min-width: 720px) {
-  .awards-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .franchise-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
