@@ -113,6 +113,11 @@ button {
   flex-shrink: 0;
 }
 
+.nav-logo {
+  height: 40px;
+  width: auto;
+}
+
 .nav-brand-text {
   display: flex;
   flex-direction: column;
