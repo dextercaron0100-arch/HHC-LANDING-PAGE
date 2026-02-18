@@ -14,7 +14,7 @@
   <header class="site-header">
     <div class="container nav">
       <a href="index.html" class="nav-brand">
-        <img src="hhc-franchise-hub-gold-logo.png" alt="HHC Franchise Hub" class="nav-logo" />
+        <img src="hhc-gold-logo.png" alt="HHC Franchise Hub" class="nav-logo" />
       </a>
 
       <ul class="nav-links" id="navLinks">
@@ -57,7 +57,7 @@
         <a href="index.html#franchises" class="btn-outline">View Opportunities</a>
         <a href="index.html#contact" class="btn-primary">
           Franchise Now
-          <span>→</span>
+          <span>&rarr;</span>
         </a>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
           <span></span>
@@ -83,9 +83,14 @@
         <div class="featured-award">
           <h2 class="featured-award-title">2025 Legacy Icon Award</h2>
           <p class="featured-award-subtitle">HHC Franchise Hub Solutions Corp. has been recognized for excellence in business leadership and franchise innovation.</p>
-          
-          <div class="award-banner">
-            <img src="hhc-franchise-hub-gold-logo.png" alt="HHC Franchise Hub Solutions Corp. - 2025 Legacy Icon Award" class="award-banner-img" />
+
+          <div class="award-banner award-banner-3d" data-award-tilt>
+            <div class="award-depth-layer award-depth-back" aria-hidden="true"></div>
+            <div class="award-depth-layer award-depth-mid" aria-hidden="true"></div>
+            <div class="award-shine" aria-hidden="true"></div>
+            <img src="legacy-award.png.png" alt="HHC Franchise Hub Solutions Corp. 2025 Legacy Icon Award" class="award-banner-img" />
+            <div class="award-floating-badge badge-left" aria-hidden="true">Legacy</div>
+            <div class="award-floating-badge badge-right" aria-hidden="true">2025</div>
           </div>
         </div>
 
@@ -125,9 +130,43 @@
         navLinks.classList.toggle('open');
       });
     }
-    
+
     // Set year
-    document.getElementById('yearSpan').textContent = new Date().getFullYear() + ' ©';
+    document.getElementById('yearSpan').textContent = new Date().getFullYear() + ' \u00A9';
+
+    // 3D tilt interaction for the featured award
+    const awardTiltCard = document.querySelector('[data-award-tilt]');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (awardTiltCard && !reduceMotion) {
+      const maxTilt = 9;
+
+      const updateTilt = (clientX, clientY) => {
+        const rect = awardTiltCard.getBoundingClientRect();
+        const x = (clientX - rect.left) / rect.width;
+        const y = (clientY - rect.top) / rect.height;
+        const ry = (x - 0.5) * maxTilt * 2;
+        const rx = (0.5 - y) * maxTilt * 2;
+
+        awardTiltCard.style.setProperty('--award-rotate-x', `${rx.toFixed(2)}deg`);
+        awardTiltCard.style.setProperty('--award-rotate-y', `${ry.toFixed(2)}deg`);
+        awardTiltCard.style.setProperty('--shine-x', `${(x * 100).toFixed(1)}%`);
+        awardTiltCard.style.setProperty('--shine-y', `${(y * 100).toFixed(1)}%`);
+        awardTiltCard.style.setProperty('--shine-opacity', '0.42');
+      };
+
+      awardTiltCard.addEventListener('pointermove', (event) => {
+        updateTilt(event.clientX, event.clientY);
+      });
+
+      awardTiltCard.addEventListener('pointerleave', () => {
+        awardTiltCard.style.setProperty('--award-rotate-x', '3deg');
+        awardTiltCard.style.setProperty('--award-rotate-y', '-5deg');
+        awardTiltCard.style.setProperty('--shine-x', '50%');
+        awardTiltCard.style.setProperty('--shine-y', '35%');
+        awardTiltCard.style.setProperty('--shine-opacity', '0');
+      });
+    }
   </script>
 </body>
 </html>

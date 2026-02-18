@@ -1,20 +1,20 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Founder's Corner - HHC FRANCHISE HUB</title>
+  <title>Founder's Corner - HHC Franchise Hub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="founder-cinematic">
   <!-- NAVBAR -->
   <header class="site-header">
     <div class="container nav">
       <a href="index.html" class="nav-brand">
-        <img src="logo.png.png" alt="HHC Franchise Hub" class="nav-logo" />
+        <img src="logo.png" alt="HHC Franchise Hub" class="nav-logo" />
       </a>
 
       <ul class="nav-links" id="navLinks">
@@ -57,7 +57,7 @@
         <a href="index.html#franchises" class="btn-outline">View Opportunities</a>
         <a href="index.html#contact" class="btn-primary">
           Franchise Now
-          <span>→</span>
+          <span>&rarr;</span>
         </a>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
           <span></span>
@@ -68,63 +68,125 @@
   </header>
 
   <main>
-    <!-- PAGE HERO -->
-    <section class="page-hero">
-      <div class="container">
-        <p class="section-kicker">About Us</p>
-        <h1 class="page-hero-title">Founder's Corner</h1>
-        <p class="page-hero-subtitle">A message from our visionary leader</p>
+    <!-- CINEMATIC HERO -->
+    <section class="founder-hero">
+      <div class="founder-hero-overlay"></div>
+      <div class="founder-hero-content">
+        <p class="founder-hero-kicker">FOUNDER'S CUT</p>
+        <h1 class="founder-hero-title">HERRERA BROTHERS</h1>
+        <p class="founder-hero-sub">Visionary behind HHC Franchise Hub</p>
+        <div class="founder-hero-cta">
+          <a class="btn-gold" href="#chapter-story">Play the story</a>
+          <a class="btn-outline" href="mailto:info@hhcfranchisehub.com">Email the founder</a>
+        </div>
+      </div>
+
+      <!-- Mini video player overlay -->
+      <button class="hero-player-card" type="button" id="openHeroVideo">
+        <div class="hero-player-thumb">
+          <video class="hero-player-preview" autoplay muted loop playsinline preload="metadata" aria-label="Founder reel preview">
+            <source src="Blesscent Marketing  Corporate Video by Nice Print Photography.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="hero-player-label">View the reel</div>
+      </button>
+
+    </section>
+
+    <!-- FEATURED PANELS -->
+    <section class="founder-panels">
+      <div class="container founder-panels-shell">
+        <article class="founder-panel" id="chapter-story">
+          <div class="panel-image" style="--panel-bg:url('bod2.jpg');"></div>
+          <div class="panel-copy">
+            <p class="panel-kicker">Chapter 01</p>
+            <h2>Story</h2>
+            <p>From bootstrapping the first kiosk to engineering a multi-format franchise portfolio, HHC was built on grit, supply-chain rigor, and a people-first training culture. Every playbook exists to shorten the distance between a dream and a profitable opening.</p>
+            <div class="panel-tags">
+              <span class="chip">Hands-on playbooks</span>
+              <span class="chip">Site discipline</span>
+              <span class="chip">Launch squads</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="founder-panel flipped" id="chapter-leadership">
+          <div class="panel-image" style="--panel-bg:url('history-2016.jpg');"></div>
+          <div class="panel-copy">
+            <p class="panel-kicker">Chapter 02</p>
+            <h2>Leadership</h2>
+            <p>Boardroom calm meets street-level execution: governance paired with daily field intelligence—walking stores, stress-testing menus, and pressure-testing unit economics before they scale.</p>
+            <div class="panel-tags">
+              <span class="chip">Governance</span>
+              <span class="chip">Unit economics</span>
+              <span class="chip">Ops discipline</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="founder-panel" id="chapter-future">
+          <div class="panel-image" style="--panel-bg:url('history-2025.jpg');"></div>
+          <div class="panel-copy">
+            <p class="panel-kicker">Chapter 03</p>
+            <h2>Future</h2>
+            <p>Experience labs, sustainability mandates, and AI-assisted rollouts keep HHC founders ahead of the curve while staying rooted in service and community impact.</p>
+            <div class="panel-tags">
+              <span class="chip">CX Lab</span>
+              <span class="chip">Sustainability</span>
+              <span class="chip">AI Planning</span>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
-    <!-- FOUNDER CONTENT -->
-    <section class="section page-content">
+    <section class="founder-cta-strip">
       <div class="container">
-        <div class="founder-page-grid">
-          <div class="founder-image-card">
-            <div class="founder-image-placeholder">
-              <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                <circle cx="12" cy="8" r="4"/>
-                <path d="M4 20c0-4 4-6 8-6s8 2 8 6"/>
-              </svg>
-            </div>
-            <h3>Dr. Wilfredo J. Lloroque Jr.</h3>
-            <p class="founder-title">Founder & CEO</p>
-          </div>
-          
-          <div class="founder-message-card">
-            <div class="quote-icon">"</div>
-            <blockquote class="founder-quote">
-              <p>Our mission has always been simple: to create opportunities that transform lives. Every franchise we offer is carefully vetted to ensure it delivers real value to our partners and their communities.</p>
-              <p>I believe that every Filipino has the potential to become a successful entrepreneur. What they need is the right opportunity, the right support, and the right partner. That's exactly what HHC Franchise Hub provides.</p>
-              <p>When you join our franchise family, you're not just starting a business — you're joining a community committed to your success. We walk with you every step of the way, from orientation to grand opening and beyond.</p>
-              <p>Thank you for considering HHC Franchise Hub as your partner in success. Together, let's build businesses that make a difference.</p>
-            </blockquote>
-            <div class="founder-signature">
-              <span class="signature-line"></span>
-              <p>Dr. Wilfredo J. Lloroque Jr.</p>
-              <p class="signature-title">Founder & CEO, HHC Franchise Hub Solutions Corp.</p>
-            </div>
-          </div>
+        <div>
+          <p class="section-kicker">Join the next chapter</p>
+          <h3>Book a founder session tailored to your market.</h3>
         </div>
-
-        <div class="page-cta">
-          <a href="index.html#contact" class="btn-gold">Connect With Us</a>
-        </div>
+        <a class="btn-gold" href="mailto:info@hhcfranchisehub.com">Book now</a>
       </div>
     </section>
   </main>
 
+  <!-- Inline video modal -->
+  <div class="video-modal" id="heroVideoModal" aria-hidden="true">
+    <div class="video-modal-backdrop"></div>
+    <div class="video-modal-content" role="dialog" aria-modal="true" aria-label="Founder reel player">
+      <div class="video-modal-topbar">
+        <p class="video-modal-title">Blesscent Marketing Corporate Video</p>
+        <button class="video-modal-close" id="closeHeroVideo" aria-label="Close video">x</button>
+      </div>
+      <div class="video-modal-frame">
+        <video id="heroVideo" preload="metadata" playsinline loop poster="history-2025.jpg">
+          <source src="Blesscent Marketing  Corporate Video by Nice Print Photography.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+
   <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-links">
-        <a href="#">Terms and Conditions</a>
-        <a href="#">Privacy Policy</a>
+  <footer class="site-footer clean-footer">
+    <div class="container clean-footer-inner">
+      <div class="clean-footer-brand">
+        <img src="logo.png" alt="HHC Franchise Hub" class="clean-footer-logo" />
+        <p class="clean-footer-tagline">Helping entrepreneurs launch food, wellness, and retail franchises.</p>
+      </div>
+      <div class="clean-footer-links">
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
         <a href="#">FAQs</a>
       </div>
-      <div class="footer-copyright">
-        <span id="yearSpan"></span> HHC Franchise Hub. All Rights Reserved
+      <div class="clean-footer-meta">
+        <p class="clean-footer-copy"><span id="yearSpan"></span> HHC Franchise Hub</p>
+        <div class="clean-footer-social">
+          <a href="https://api.whatsapp.com/send?phone=+112067101079" aria-label="Whatsapp">ðŸŸ¢</a>
+          <a href="https://www.facebook.com/" aria-label="Facebook">ðŸ“˜</a>
+          <a href="https://www.instagram.com/" aria-label="Instagram">ðŸ“¸</a>
+        </div>
       </div>
     </div>
   </footer>
@@ -141,7 +203,55 @@
     }
     
     // Set year
-    document.getElementById('yearSpan').textContent = new Date().getFullYear() + ' ©';
+    const yearSpan = document.getElementById('yearSpan');
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+
+    // Hero video modal
+    const openHeroVideo = document.getElementById('openHeroVideo');
+    const heroVideoModal = document.getElementById('heroVideoModal');
+    const closeHeroVideo = document.getElementById('closeHeroVideo');
+    const heroVideo = document.getElementById('heroVideo');
+    const heroPlayerPreview = document.querySelector('.hero-player-preview');
+
+    function closeModal() {
+      heroVideoModal.classList.remove('open');
+      heroVideoModal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+      if (heroVideo) {
+        heroVideo.pause();
+        heroVideo.currentTime = 0;
+      }
+    }
+
+    if (openHeroVideo && heroVideoModal && closeHeroVideo && heroVideo) {
+      if (heroPlayerPreview) {
+        heroPlayerPreview.play().catch(() => {});
+      }
+
+      openHeroVideo.addEventListener('click', () => {
+        heroVideoModal.classList.add('open');
+        heroVideoModal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+        closeHeroVideo.focus();
+        heroVideo.play().catch(() => {});
+      });
+      closeHeroVideo.addEventListener('click', closeModal);
+      heroVideoModal.addEventListener('click', (e) => {
+        if (e.target === heroVideoModal || e.target === heroVideoModal.querySelector('.video-modal-backdrop')) {
+          closeModal();
+        }
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && heroVideoModal.classList.contains('open')) {
+          closeModal();
+        }
+      });
+    }
   </script>
 </body>
 </html>
+
+
+
