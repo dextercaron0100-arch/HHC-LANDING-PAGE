@@ -341,7 +341,7 @@ dropdownLinks.forEach(link => {
 // Franchise Carousel
 const franchiseCarousel = {
   currentIndex: 0,
-  cardWidth: 316, // card width + gap
+  cardWidth: 340,
   visibleCards: 3,
   
   init() {
@@ -359,16 +359,24 @@ const franchiseCarousel = {
   
   updateVisibleCards() {
     const width = window.innerWidth;
+    this.cardWidth = this.measureCardWidth();
     if (width < 640) {
       this.visibleCards = 1;
-      this.cardWidth = 316;
     } else if (width < 900) {
       this.visibleCards = 2;
-      this.cardWidth = 316;
     } else {
       this.visibleCards = 3;
-      this.cardWidth = 316;
     }
+  },
+
+  measureCardWidth() {
+    const track = this.getActiveTrack();
+    if (!track) return this.cardWidth;
+    const firstCard = track.querySelector('.franchise-carousel-card');
+    if (!firstCard) return this.cardWidth;
+    const styles = window.getComputedStyle(track);
+    const gap = parseFloat(styles.columnGap || styles.gap || '0') || 0;
+    return firstCard.getBoundingClientRect().width + gap;
   },
   
   bindEvents() {
@@ -392,6 +400,7 @@ const franchiseCarousel = {
         
         // Reset carousel position
         this.currentIndex = 0;
+        this.cardWidth = this.measureCardWidth();
         this.updateCarousel();
       });
     });
@@ -433,6 +442,7 @@ const franchiseCarousel = {
   updateCarousel() {
     const track = this.getActiveTrack();
     if (!track) return;
+    this.cardWidth = this.measureCardWidth();
     
     const offset = -this.currentIndex * this.cardWidth;
     track.style.transform = `translateX(${offset}px)`;

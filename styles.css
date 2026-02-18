@@ -1145,33 +1145,34 @@ h1, h2, h3, h4 {
 .franchise-carousel {
   display: flex;
   overflow: hidden;
-  max-width: 1000px;
+  max-width: 1140px;
   width: 100%;
 }
 
 .franchise-carousel-track {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.25rem;
   transition: transform 0.5s ease;
   padding: 1rem 0;
 }
 
 .franchise-carousel-card {
-  flex: 0 0 300px;
-  min-height: 380px;
-  padding: 2rem 1.5rem;
-  border-radius: 8px;
+  flex: 0 0 320px;
+  min-height: 500px;
+  padding: 2.2rem 1.7rem 1.9rem;
+  border-radius: 14px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
 }
 
 .franchise-carousel-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.24);
+  filter: saturate(1.05);
 }
 
 .card-gold {
@@ -1238,29 +1239,30 @@ h1, h2, h3, h4 {
   color: #fff;
 }
 
-/* Match the reference look: FOOD lane cards use one clean gold tone */
+/* Food lane cards: logo-driven palettes */
 .franchise-carousel-track[data-category="food"] .franchise-carousel-card {
-  background: #bc9720;
-  color: #1a1a1a;
+  background: var(--food-card-bg, linear-gradient(180deg, #c9a227 0%, #b8941f 50%, #a78517 100%));
+  color: var(--food-card-text, #1a1a1a);
+  border: 1px solid var(--food-card-border, rgba(0, 0, 0, 0.08));
 }
 
 .franchise-carousel-track[data-category="food"] .carousel-card-title-fallback,
 .franchise-carousel-track[data-category="food"] .carousel-card-text,
 .franchise-carousel-track[data-category="food"] .carousel-card-link {
-  color: #1a1a1a;
+  color: var(--food-card-text, #1a1a1a);
 }
 
 .carousel-card-logo {
-  margin-bottom: 1.5rem;
-  min-height: 80px;
+  margin-bottom: 1.8rem;
+  min-height: 96px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .carousel-card-logo img {
-  max-width: 200px;
-  max-height: 80px;
+  max-width: 240px;
+  max-height: 96px;
   object-fit: contain;
 }
 
@@ -1291,10 +1293,10 @@ h1, h2, h3, h4 {
 }
 
 .carousel-card-text {
-  font-size: 0.9rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.7;
   flex-grow: 1;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .card-gold .carousel-card-text {
@@ -1308,8 +1310,8 @@ h1, h2, h3, h4 {
 }
 
 .carousel-card-link {
-  font-weight: 600;
-  font-size: 0.95rem;
+  font-weight: 700;
+  font-size: 1.05rem;
   transition: opacity 0.3s ease;
 }
 
@@ -1325,6 +1327,36 @@ h1, h2, h3, h4 {
 
 .carousel-card-link:hover {
   opacity: 0.7;
+}
+
+.card-boss-siomai {
+  --food-card-bg: linear-gradient(165deg, #0d3f99 0%, #1f60bf 55%, #e02b36 100%);
+  --food-card-text: #f8fbff;
+  --food-card-border: rgba(255, 255, 255, 0.2);
+}
+
+.card-boss-chickn {
+  --food-card-bg: linear-gradient(165deg, #b90f16 0%, #e22a1f 58%, #f2b22d 100%);
+  --food-card-text: #fffaf0;
+  --food-card-border: rgba(255, 228, 153, 0.34);
+}
+
+.card-noodle-king {
+  --food-card-bg: linear-gradient(165deg, #2a0f12 0%, #8a1217 54%, #f3aa26 100%);
+  --food-card-text: #fff4e8;
+  --food-card-border: rgba(255, 205, 120, 0.35);
+}
+
+.card-burger-2go {
+  --food-card-bg: linear-gradient(165deg, #6a1c20 0%, #c7471f 52%, #f29d1f 100%);
+  --food-card-text: #fff8ee;
+  --food-card-border: rgba(255, 214, 162, 0.33);
+}
+
+.card-boss-fries {
+  --food-card-bg: linear-gradient(165deg, #efc12e 0%, #d59d1c 52%, #b47613 100%);
+  --food-card-text: #1f1307;
+  --food-card-border: rgba(67, 36, 3, 0.22);
 }
 
 /* --------------------
@@ -5278,7 +5310,7 @@ body.modal-open {
 
 /* Keep Noodle King visuals fully visible: no crop inside media frames. */
 .noodle-page .bigstop-proof-media.noodle-media-fit {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -5292,6 +5324,130 @@ body.modal-open {
   min-height: 0;
   object-fit: contain;
   filter: saturate(1.03) contrast(1.03);
+}
+
+.noodle-page .noodle-media-main {
+  aspect-ratio: 2665 / 1285;
+}
+
+.noodle-page .noodle-media-menu {
+  aspect-ratio: 1388 / 674;
+}
+
+.noodle-page .noodle-media-highlight {
+  aspect-ratio: 633 / 454;
+}
+
+/* Keep the Noodle showcase clean and prevent overlap at all viewport scales. */
+.noodle-page .noodle-proof-grid {
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  align-items: start;
+}
+
+.noodle-page .noodle-proof-grid > * {
+  min-width: 0;
+}
+
+.noodle-page .noodle-proof-side {
+  display: grid;
+  gap: 0.75rem;
+  align-content: start;
+}
+
+.noodle-page .noodle-proof-side .bigstop-proof-media-mini {
+  margin-bottom: 0;
+}
+
+.noodle-page .noodle-proof-copy {
+  margin-bottom: 0;
+}
+
+.noodle-page .noodle-stat-stack {
+  gap: 0.6rem;
+}
+
+.noodle-page .noodle-stat-stack .bigstop-stat-card strong {
+  font-size: 1.08rem;
+  line-height: 1.25;
+  font-family: var(--font-sans);
+}
+
+.noodle-page .noodle-about-fill {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr));
+}
+
+.noodle-page .noodle-about-main,
+.noodle-page .noodle-about-point {
+  border: 1px solid rgba(255, 176, 92, 0.24);
+  border-radius: 16px;
+  background: rgba(63, 14, 18, 0.7);
+  padding: 0.95rem 1rem;
+}
+
+.noodle-page .noodle-about-main h3 {
+  margin: 0.25rem 0 0.45rem;
+  color: #fff5ec;
+  font-size: 1.15rem;
+}
+
+.noodle-page .noodle-about-main p {
+  margin: 0;
+  color: rgba(255, 214, 183, 0.9);
+  line-height: 1.6;
+  font-size: 0.92rem;
+}
+
+.noodle-page .noodle-about-point {
+  display: grid;
+  gap: 0.25rem;
+  align-content: start;
+}
+
+.noodle-page .noodle-about-point strong {
+  color: #ffe9a8;
+  font-size: 0.95rem;
+}
+
+.noodle-page .noodle-about-point span {
+  color: rgba(255, 214, 183, 0.88);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 1060px) {
+  .noodle-page .noodle-proof-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .noodle-page .noodle-proof-side {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .noodle-page .noodle-proof-copy,
+  .noodle-page .noodle-stat-stack {
+    grid-column: 1 / -1;
+  }
+
+  .noodle-page .noodle-about-fill {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .noodle-page .noodle-about-main {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .noodle-page .noodle-proof-side {
+    grid-template-columns: 1fr;
+  }
+
+  .noodle-page .noodle-about-fill {
+    grid-template-columns: 1fr;
+  }
 }
 
 .sr-only {
