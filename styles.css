@@ -440,7 +440,7 @@ h1, h2, h3, h4 {
 }
 
 .hero-slide:nth-child(5) {
-  background-image: url('https://images.unsplash.com/photo-1552566626-52f8b828add9?w=1920&q=80');
+  background-image: url('BOD.png');
 }
 
 /* Progress Bar */
@@ -1917,6 +1917,17 @@ h1, h2, h3, h4 {
   position: relative;
 }
 
+.panel-image.panel-image-focus-top {
+  background-position: center 18%;
+}
+
+.panel-image.panel-image-portrait-fit {
+  background-size: contain;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: #0a0e16;
+}
+
 .panel-image::after {
   content: "";
   position: absolute;
@@ -2353,6 +2364,10 @@ body.modal-open {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.simple-history .timeline-image img.timeline-image-focus-top {
+  object-position: center 18%;
 }
 
 .simple-history .milestone-tags {
@@ -4848,6 +4863,10 @@ body.modal-open {
   border-color: rgba(123, 212, 180, 0.25);
 }
 
+.pharmacy-page .pharmacy-offer-right {
+  object-position: right center;
+}
+
 .pharmacy-page .bigstop-proof-side > p {
   border-color: rgba(117, 208, 175, 0.26);
   background: rgba(8, 32, 23, 0.68);
@@ -5415,6 +5434,284 @@ body.modal-open {
   color: rgba(255, 214, 183, 0.88);
   font-size: 0.86rem;
   line-height: 1.5;
+}
+
+.fries-page {
+  background:
+    radial-gradient(95% 120% at 12% 10%, rgba(255, 212, 75, 0.3), transparent 46%),
+    radial-gradient(85% 105% at 86% 6%, rgba(255, 78, 45, 0.2), transparent 44%),
+    linear-gradient(180deg, #1c1105 0%, #140c03 100%);
+  color: #fff6e8;
+}
+
+.fries-page .bigstop-layout::before {
+  background:
+    linear-gradient(180deg, rgba(52, 30, 8, 0.84) 0%, rgba(42, 24, 6, 0.94) 38%, rgba(27, 15, 4, 0.98) 100%),
+    url("Copy of boss fries mascot.png") right 6% top 14% / 34% auto no-repeat;
+}
+
+.fries-page .bigstop-layout::after {
+  background:
+    radial-gradient(circle at 18% 10%, rgba(255, 208, 99, 0.3), transparent 29%),
+    radial-gradient(circle at 84% 18%, rgba(255, 86, 52, 0.26), transparent 33%),
+    radial-gradient(circle at 48% 88%, rgba(180, 33, 20, 0.22), transparent 36%);
+}
+
+.fries-page .bigstop-kicker {
+  color: #ffeaa6;
+  border-color: rgba(255, 222, 136, 0.4);
+  background: rgba(96, 37, 8, 0.58);
+}
+
+.fries-page .bigstop-section-header .section-kicker {
+  color: #ffd566;
+}
+
+.fries-page .bigstop-hero-copy h1,
+.fries-page .bigstop-section-header .section-title,
+.fries-page .bigstop-contact-copy h2 {
+  color: #fff8ef;
+}
+
+.fries-page .bigstop-hero-copy > p,
+.fries-page .bigstop-contact-copy p {
+  color: rgba(255, 231, 203, 0.9);
+}
+
+.fries-page .bigstop-hero-button,
+.fries-page .bigstop-card-button {
+  background: linear-gradient(135deg, rgba(255, 230, 145, 0.97), rgba(255, 186, 82, 0.97));
+  color: #4f1806;
+}
+
+.fries-page .bigstop-hero-card {
+  border-color: rgba(255, 190, 110, 0.28);
+  background: linear-gradient(150deg, rgba(87, 30, 8, 0.75), rgba(56, 18, 6, 0.58));
+}
+
+.fries-page .bigstop-hero-card-visual {
+  border-color: rgba(255, 214, 151, 0.3);
+  background:
+    radial-gradient(circle at 50% 28%, rgba(255, 228, 170, 0.22), transparent 49%),
+    linear-gradient(160deg, rgba(102, 38, 10, 0.88), rgba(55, 20, 7, 0.93));
+}
+
+.fries-page .bigstop-hero-card-visual img {
+  width: min(74%, 250px);
+  max-height: 240px;
+}
+
+.fries-page .bigstop-proof-media,
+.fries-page .bigstop-proof-side > p,
+.fries-page .bigstop-stat-card,
+.fries-page .bigstop-reason-card,
+.fries-page .bigstop-invest-card,
+.fries-page .bigstop-invest-grid article,
+.fries-page .bigstop-form {
+  border-color: rgba(255, 181, 101, 0.25);
+}
+
+.fries-page .bigstop-proof-side > p,
+.fries-page .bigstop-stat-card,
+.fries-page .bigstop-reason-card,
+.fries-page .bigstop-invest-grid article,
+.fries-page .bigstop-form {
+  background: rgba(83, 28, 8, 0.68);
+}
+
+.fries-page .bigstop-stat-card span,
+.fries-page .bigstop-reason-card p,
+.fries-page .bigstop-invest-grid span,
+.fries-page .bigstop-form small {
+  color: rgba(255, 222, 188, 0.85);
+}
+
+.fries-page .bigstop-stat-card strong,
+.fries-page .bigstop-reason-card h3,
+.fries-page .bigstop-invest-grid strong,
+.fries-page .bigstop-invest-card h2 {
+  color: #fff6ec;
+}
+
+.fries-page .bigstop-reason-number {
+  color: rgba(255, 222, 148, 0.9);
+}
+
+.fries-page .bigstop-form input,
+.fries-page .bigstop-form textarea {
+  border-color: rgba(255, 177, 92, 0.36);
+  background: rgba(255, 247, 236, 0.97);
+  color: #5d220d;
+}
+
+.fries-page .bigstop-form input::placeholder,
+.fries-page .bigstop-form textarea::placeholder {
+  color: rgba(93, 34, 13, 0.58);
+}
+
+.fries-page .bigstop-form button {
+  border-color: rgba(255, 217, 146, 0.46);
+  background: linear-gradient(135deg, rgba(189, 39, 20, 0.96), rgba(132, 24, 12, 0.94));
+  color: #ffeed0;
+}
+
+.fries-page .bigstop-form button:hover {
+  background: linear-gradient(135deg, rgba(215, 45, 23, 0.98), rgba(148, 26, 13, 0.96));
+}
+
+.fries-page .bigstop-proof-media.fries-media-fit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem;
+  background: rgba(47, 16, 5, 0.8);
+}
+
+.fries-page .bigstop-proof-media.fries-media-fit img {
+  width: min(76%, 420px);
+  height: auto;
+  min-height: 0;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.35));
+}
+
+.burger-page {
+  background:
+    radial-gradient(98% 120% at 12% 12%, rgba(255, 87, 44, 0.29), transparent 46%),
+    radial-gradient(90% 105% at 86% 6%, rgba(255, 197, 66, 0.2), transparent 42%),
+    linear-gradient(180deg, #1e0908 0%, #120504 100%);
+  color: #fff2eb;
+}
+
+.burger-page .bigstop-layout::before {
+  background:
+    linear-gradient(180deg, rgba(61, 13, 10, 0.82) 0%, rgba(45, 9, 7, 0.94) 40%, rgba(28, 6, 5, 0.98) 100%),
+    url("Burger2Go_Official Logo.png") right 5% top 16% / 40% auto no-repeat;
+}
+
+.burger-page .bigstop-layout::after {
+  background:
+    radial-gradient(circle at 20% 11%, rgba(255, 199, 86, 0.3), transparent 30%),
+    radial-gradient(circle at 84% 19%, rgba(255, 78, 48, 0.25), transparent 33%),
+    radial-gradient(circle at 50% 88%, rgba(189, 26, 23, 0.22), transparent 36%);
+}
+
+.burger-page .bigstop-kicker {
+  color: #ffecb1;
+  border-color: rgba(255, 225, 141, 0.4);
+  background: rgba(92, 22, 12, 0.58);
+}
+
+.burger-page .bigstop-section-header .section-kicker {
+  color: #ffd870;
+}
+
+.burger-page .bigstop-hero-copy h1,
+.burger-page .bigstop-section-header .section-title,
+.burger-page .bigstop-contact-copy h2 {
+  color: #fff8ef;
+}
+
+.burger-page .bigstop-hero-copy > p,
+.burger-page .bigstop-contact-copy p {
+  color: rgba(255, 228, 206, 0.9);
+}
+
+.burger-page .bigstop-hero-button,
+.burger-page .bigstop-card-button {
+  background: linear-gradient(135deg, rgba(255, 225, 145, 0.97), rgba(255, 152, 70, 0.97));
+  color: #59170f;
+}
+
+.burger-page .bigstop-hero-card {
+  border-color: rgba(255, 185, 107, 0.28);
+  background: linear-gradient(150deg, rgba(89, 16, 12, 0.75), rgba(58, 9, 8, 0.58));
+}
+
+.burger-page .bigstop-hero-card-visual {
+  border-color: rgba(255, 214, 151, 0.3);
+  background:
+    radial-gradient(circle at 50% 28%, rgba(255, 231, 174, 0.22), transparent 49%),
+    linear-gradient(160deg, rgba(106, 18, 14, 0.88), rgba(59, 10, 9, 0.93));
+}
+
+.burger-page .bigstop-hero-card-visual img {
+  width: min(88%, 285px);
+  max-height: 210px;
+}
+
+.burger-page .bigstop-proof-media,
+.burger-page .bigstop-proof-side > p,
+.burger-page .bigstop-stat-card,
+.burger-page .bigstop-reason-card,
+.burger-page .bigstop-invest-card,
+.burger-page .bigstop-invest-grid article,
+.burger-page .bigstop-form {
+  border-color: rgba(255, 177, 99, 0.25);
+}
+
+.burger-page .bigstop-proof-side > p,
+.burger-page .bigstop-stat-card,
+.burger-page .bigstop-reason-card,
+.burger-page .bigstop-invest-grid article,
+.burger-page .bigstop-form {
+  background: rgba(81, 16, 12, 0.67);
+}
+
+.burger-page .bigstop-stat-card span,
+.burger-page .bigstop-reason-card p,
+.burger-page .bigstop-invest-grid span,
+.burger-page .bigstop-form small {
+  color: rgba(255, 221, 192, 0.85);
+}
+
+.burger-page .bigstop-stat-card strong,
+.burger-page .bigstop-reason-card h3,
+.burger-page .bigstop-invest-grid strong,
+.burger-page .bigstop-invest-card h2 {
+  color: #fff6ed;
+}
+
+.burger-page .bigstop-reason-number {
+  color: rgba(255, 220, 152, 0.9);
+}
+
+.burger-page .bigstop-form input,
+.burger-page .bigstop-form textarea {
+  border-color: rgba(255, 173, 89, 0.36);
+  background: rgba(255, 247, 237, 0.97);
+  color: #5a1d14;
+}
+
+.burger-page .bigstop-form input::placeholder,
+.burger-page .bigstop-form textarea::placeholder {
+  color: rgba(90, 29, 20, 0.58);
+}
+
+.burger-page .bigstop-form button {
+  border-color: rgba(255, 216, 146, 0.46);
+  background: linear-gradient(135deg, rgba(193, 34, 26, 0.96), rgba(133, 21, 16, 0.94));
+  color: #ffefd3;
+}
+
+.burger-page .bigstop-form button:hover {
+  background: linear-gradient(135deg, rgba(218, 38, 29, 0.98), rgba(148, 23, 18, 0.96));
+}
+
+.burger-page .bigstop-proof-media.burger-media-fit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem;
+  background: rgba(44, 11, 9, 0.8);
+}
+
+.burger-page .bigstop-proof-media.burger-media-fit img {
+  width: min(76%, 460px);
+  height: auto;
+  min-height: 0;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.32));
 }
 
 @media (max-width: 1060px) {
