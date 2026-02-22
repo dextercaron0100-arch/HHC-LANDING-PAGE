@@ -5860,7 +5860,10 @@ body.modal-open {
 
 .bigstop-branches-stage {
   position: relative;
+  height: clamp(290px, 40vw, 420px);
   min-height: clamp(290px, 40vw, 420px);
+  display: grid;
+  place-items: center;
   border-radius: 24px;
   overflow: hidden;
   perspective: 1300px;
@@ -7244,6 +7247,7 @@ body.modal-open {
   }
 
   .bigstop-branches-stage {
+    height: clamp(270px, 50vw, 360px);
     min-height: clamp(270px, 50vw, 360px);
   }
 
@@ -7392,6 +7396,7 @@ body.modal-open {
   .bigstop-branches-stage {
     order: 1;
     grid-column: 1 / -1;
+    height: clamp(236px, 64vw, 310px);
     min-height: clamp(236px, 64vw, 310px);
   }
 
