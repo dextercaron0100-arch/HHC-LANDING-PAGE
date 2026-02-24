@@ -8502,6 +8502,11 @@ body.modal-open {
   align-items: center;
 }
 
+/* Prevent anchor overlap with nav + timer */
+[id] {
+  scroll-margin-top: calc(var(--nav-height) + 60px);
+}
+
 .floating-cta {
   position: fixed;
   bottom: 20px;
