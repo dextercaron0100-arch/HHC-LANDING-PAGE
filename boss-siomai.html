@@ -8,11 +8,17 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="subpage bigstop-page siomai-page">
+  <!-- Background audio -->
+  <audio id="bg-audio" src="MUSIC/BOSS SIOMAI - Advertising Jingle.mp3" preload="auto" loop></audio>
+  <button id="audioToggle" class="audio-toggle" type="button" aria-pressed="true">Pause Music</button>
   <!-- NAVBAR -->
   <header class="site-header">
     <div class="container nav">
       <a href="index.html" class="nav-brand">
-        <img src="logo.png.png" alt="HHC Franchise Hub" class="nav-logo" />
+        <span class="nav-brand-text">
+          <span>HHC Franchise Hub</span>
+          <span>Franchise Solutions</span>
+        </span>
       </a>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html" class="nav-link">Home</a></li>
@@ -60,6 +66,13 @@
       </button>
     </div>
   </header>
+
+  <!-- Urgency bar -->
+  <div class="timer-bar">
+    🔥 <strong>LIMITED TIME OFFER</strong> — Ends in:
+    <strong id="countdown">23:59:59</strong> &nbsp;|&nbsp;
+    Only a few slots remaining!
+  </div>
 
   <main class="bigstop-layout">
     <section class="bigstop-showcase">
@@ -149,27 +162,184 @@
       </div>
     </section>
 
-    <section class="bigstop-invest section">
-      <div class="container">
-        <div class="bigstop-invest-card">
-          <h2>Investment Details</h2>
-          <div class="bigstop-invest-grid">
-            <article>
-              <span>Franchise Fee</span>
-              <strong>Contact for Details</strong>
-            </article>
-            <article>
-              <span>Total Investment</span>
-              <strong>Varies by Stall Size</strong>
-            </article>
-            <article>
-              <span>Contract Term</span>
-              <strong>5 Years</strong>
-            </article>
+    <section class="siomai-why section" aria-labelledby="siomai-why-title">
+      <div class="container siomai-why-grid">
+        <div class="siomai-why-left">
+          <p class="section-kicker">Why Franchise with Boss Siomai?</p>
+          <h2 id="siomai-why-title">Bossing sa Lasa, Swak sa Bulsa</h2>
+          <p class="siomai-why-lede">Lean operations, strong recall, and all-day demand make Boss Siomai a quick-win food cart for busy spots.</p>
+          <div class="siomai-why-brand" aria-hidden="true">
+            <img src="Copy of BOSS SIOMAI2 horizontal.png" alt="Boss Siomai logo" />
           </div>
+        </div>
+        <div class="siomai-why-right">
+          <ul class="siomai-why-list">
+            <li>
+              <span class="siomai-why-bullet"></span>
+              <div>
+                <strong>Strong brand recall</strong>
+                <p>Customers already know the mascot, the menu, and the taste.</p>
+              </div>
+            </li>
+            <li>
+              <span class="siomai-why-bullet"></span>
+              <div>
+                <strong>High product demand</strong>
+                <p>Siomai is a proven daily staple across malls, terminals, and schools.</p>
+              </div>
+            </li>
+            <li>
+              <span class="siomai-why-bullet"></span>
+              <div>
+                <strong>Operationally simple &amp; scalable</strong>
+                <p>Small team, fast prep, and playbooked workflows keep service smooth.</p>
+              </div>
+            </li>
+            <li>
+              <span class="siomai-why-bullet"></span>
+              <div>
+                <strong>Affordable pricing attracts daily customers</strong>
+                <p>Value-led combos bring repeat visits and steady volume.</p>
+              </div>
+            </li>
+            <li>
+              <span class="siomai-why-bullet"></span>
+              <div>
+                <strong>Proven business system + ongoing support</strong>
+                <p>Training, supply alignment, and opening assistance are built in.</p>
+              </div>
+            </li>
+            <li>
+              <span class="siomai-why-bullet"></span>
+              <div>
+                <strong>Territorial exclusivity</strong>
+                <p>Protect your zone with defined area coverage.</p>
+              </div>
+            </li>
+            <li>
+              <span class="siomai-why-bullet"></span>
+              <div>
+                <strong>Affordable franchise with bigger profit returns</strong>
+                <p>Low barrier to start, designed for fast payback in high-traffic sites.</p>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
+
+    <section class="siomai-packages section">
+      <div class="container">
+        <div class="siomai-packages-logo">
+          <img src="Copy of BOSS SIOMAI2 horizontal.png" alt="Boss Siomai logo" />
+        </div>
+        <div class="section-header">
+          <p class="section-kicker">Package Visuals</p>
+          <h2 class="section-title">Choose the Boss Siomai setup that fits you</h2>
+        </div>
+        <div class="package-filters" aria-label="Package quick filter">
+          <button type="button" class="pill active" data-package-filter="all">All</button>
+          <button type="button" class="pill" data-package-filter="mobile">Mobile</button>
+          <button type="button" class="pill" data-package-filter="stationary">Stationary</button>
+          <button type="button" class="pill" data-package-filter="reseller">Reseller</button>
+        </div>
+
+        <div class="siomai-packages-grid">
+          <article class="siomai-package-card" data-package-type="stationary">
+            <div class="package-thumb">
+              <img src="BOSS%20SIOAMI%20SECTION/123214.jpg" alt="Boss Siomai Food Cart poster thumbnail" loading="lazy" />
+            </div>
+            <div class="package-top">
+              <div class="package-name">Food Cart Package</div>
+              <div class="package-price">From ₱39,999</div>
+              <div class="package-tag">Best for: Mall / school kiosks</div>
+            </div>
+            <ul class="package-points">
+              <li>Cart + burner + uniforms</li>
+              <li>Initial inventory included</li>
+              <li>Training & opening support</li>
+            </ul>
+            <div class="package-actions">
+              <button class="btn-primary-ghost package-preview" data-poster="BOSS%20SIOAMI%20SECTION/123214.jpg">View full poster</button>
+              <a class="btn-solid" href="index.html#contact-email">Claim this package</a>
+            </div>
+          </article>
+
+          <article class="siomai-package-card popular" data-package-type="mobile">
+            <div class="package-thumb">
+              <img src="BOSS%20SIOAMI%20SECTION/123.jpg" alt="Boss Siomai Bike Cart poster thumbnail" loading="lazy" />
+            </div>
+            <div class="package-top">
+              <div class="package-name">Bike Cart Package</div>
+              <div class="package-price">From ₱65,000</div>
+              <div class="package-tag">Best for: Mobile rounds / campuses</div>
+            </div>
+            <ul class="package-points">
+              <li>Bike cart with side tables</li>
+              <li>Top storage + detachable roofing</li>
+              <li>Starter inventory included</li>
+            </ul>
+            <div class="package-actions">
+              <button class="btn-primary-ghost package-preview" data-poster="BOSS%20SIOAMI%20SECTION/123.jpg">View full poster</button>
+              <a class="btn-solid" href="index.html#contact-email">Claim this package</a>
+            </div>
+          </article>
+
+          <article class="siomai-package-card" data-package-type="stationary">
+            <div class="package-thumb">
+              <img src="BOSS%20SIOAMI%20SECTION/12333.jpg" alt="Boss Siomai Kiosk poster thumbnail" loading="lazy" />
+            </div>
+            <div class="package-top">
+              <div class="package-name">Kiosk Package</div>
+              <div class="package-price">From ₱99,000</div>
+              <div class="package-tag">Best for: Malls / terminals</div>
+            </div>
+            <ul class="package-points">
+              <li>Full kiosk body + service counter</li>
+              <li>Electrical & lighting provisions</li>
+              <li>Initial stock + uniforms</li>
+            </ul>
+            <div class="package-actions">
+              <button class="btn-primary-ghost package-preview" data-poster="BOSS%20SIOAMI%20SECTION/12333.jpg">View full poster</button>
+              <a class="btn-solid" href="index.html#contact-email">Claim this package</a>
+            </div>
+          </article>
+
+          <article class="siomai-package-card reseller" data-package-type="reseller">
+            <div class="package-thumb">
+              <img src="BOSS%20SIOAMI%20SECTION/eb0d382e-e825-499c-9b0a-7bd6acd6755d.jpg" alt="Boss Siomai Reseller poster thumbnail" loading="lazy" />
+            </div>
+            <div class="package-top">
+              <div class="package-name">Reseller Package</div>
+              <div class="package-price">Only ₱4,999</div>
+              <div class="package-tag">Best for: Home / side-income</div>
+            </div>
+            <ul class="package-points">
+              <li>Frozen siomai + sauces included</li>
+              <li>No franchise & royalty fee</li>
+              <li>Fast-moving products, easy start</li>
+            </ul>
+            <div class="package-actions">
+              <button class="btn-primary-ghost package-preview" data-poster="BOSS%20SIOAMI%20SECTION/eb0d382e-e825-499c-9b0a-7bd6acd6755d.jpg">View full poster</button>
+              <a class="btn-solid" href="index.html#contact-email">Become a reseller</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="package-cta-row">
+          <a class="btn-solid" href="index.html#contact-email">Not sure? Message us to recommend a setup</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Poster modal -->
+    <div class="package-modal" id="packageModal" aria-hidden="true" role="dialog">
+      <div class="package-modal-backdrop"></div>
+      <div class="package-modal-content">
+        <button class="package-modal-close" type="button" aria-label="Close poster">&times;</button>
+        <img id="packageModalImg" alt="Package poster preview" />
+      </div>
+    </div>
 
     <section class="bigstop-contact section">
       <div class="container">
@@ -214,7 +384,51 @@
     </div>
   </footer>
 
+  <!-- Floating CTA -->
   <script src="script.js"></script>
+  <script>
+    // Background audio autoplay with play/pause toggle
+    (function initPageAudio() {
+      const audio = document.getElementById('bg-audio');
+      const toggle = document.getElementById('audioToggle');
+      if (!audio || !toggle) return;
+
+      const tryPlay = () => audio.play().catch(() => {});
+      const update = () => {
+        const playing = !audio.paused;
+        toggle.textContent = playing ? 'Pause Music' : 'Play Music';
+        toggle.setAttribute('aria-pressed', playing.toString());
+      };
+
+      tryPlay();
+      update();
+
+      const resume = () => {
+        tryPlay();
+        update();
+        if (!audio.paused) {
+          ['click', 'touchstart', 'keydown'].forEach(evt =>
+            document.removeEventListener(evt, resume, true)
+          );
+        }
+      };
+      ['click', 'touchstart', 'keydown'].forEach(evt =>
+        document.addEventListener(evt, resume, { capture: true, passive: true })
+      );
+
+      toggle.addEventListener('click', () => {
+        if (audio.paused) {
+          tryPlay();
+        } else {
+          audio.pause();
+        }
+        update();
+      });
+
+      audio.addEventListener('play', update);
+      audio.addEventListener('pause', update);
+    })();
+  </script>
 </body>
 </html>
 

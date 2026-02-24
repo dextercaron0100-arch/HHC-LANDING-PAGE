@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="subpage bigstop-page">
+  <!-- Background audio -->
+  <audio id="bg-audio" src="MUSIC/BIGSTOP.mp3" preload="auto" loop></audio>
+  <button id="audioToggle" class="audio-toggle" type="button" aria-pressed="true">Pause Music</button>
   <!-- NAVBAR -->
   <header class="site-header">
     <div class="container nav">
@@ -295,7 +298,7 @@
               </div>
               <div class="summary-card">
                 <p class="summary-label">Required Floor Area</p>
-                <p class="summary-value">100â€“150 sqm</p>
+                <p class="summary-value">100–150 sqm</p>
               </div>
             </div>
             <div class="details-table wide-3" role="table" aria-label="3.5M package breakdown">
@@ -503,6 +506,7 @@
                 <div>
                   <p class="contact-label">Email</p>
                   <p class="contact-value">salesbigstop@gmail.com</p>
+                  <p class="contact-value">fhoperationsdept@gmail.com</p>
                 </div>
               </div>
               <div class="contact-card">
@@ -510,6 +514,7 @@
                 <div>
                   <p class="contact-label">Phone / Viber</p>
                   <p class="contact-value">0956 654 9829</p>
+                  <p class="contact-value">+63 956 654 9829</p>
                 </div>
               </div>
               <div class="contact-card">
@@ -517,6 +522,13 @@
                 <div>
                   <p class="contact-label">Office</p>
                   <p class="contact-value">Herrera Prestige Bldg., Madison South Subd., Brgy. Batino, Calamba City, Laguna</p>
+                </div>
+              </div>
+              <div class="contact-card">
+                <div class="contact-icon" aria-hidden="true">&#128339;</div>
+                <div>
+                  <p class="contact-label">Hours</p>
+                  <p class="contact-value">Mon–Fri, 9:00 AM – 6:00 PM</p>
                 </div>
               </div>
             </div>
@@ -556,6 +568,51 @@
     </div>
   </footer>
 
+  <script>
+    // Background audio autoplay with play/pause toggle
+    (function initPageAudio() {
+      const audio = document.getElementById('bg-audio');
+      const toggle = document.getElementById('audioToggle');
+      if (!audio || !toggle) return;
+
+      const tryPlay = () => audio.play().catch(() => {});
+      const update = () => {
+        const playing = !audio.paused;
+        toggle.textContent = playing ? 'Pause Music' : 'Play Music';
+        toggle.setAttribute('aria-pressed', playing.toString());
+      };
+
+      // initial attempt
+      tryPlay();
+      update();
+
+      // resume if browser blocks autoplay
+      const resume = () => {
+        tryPlay();
+        update();
+        if (!audio.paused) {
+          ['click', 'touchstart', 'keydown'].forEach(evt =>
+            document.removeEventListener(evt, resume, true)
+          );
+        }
+      };
+      ['click', 'touchstart', 'keydown'].forEach(evt =>
+        document.addEventListener(evt, resume, { capture: true, passive: true })
+      );
+
+      toggle.addEventListener('click', () => {
+        if (audio.paused) {
+          tryPlay();
+        } else {
+          audio.pause();
+        }
+        update();
+      });
+
+      audio.addEventListener('play', update);
+      audio.addEventListener('pause', update);
+    })();
+  </script>
   <script src="script.js"></script>
 </body>
 </html>

@@ -819,3 +819,97 @@ prefersReducedMotion.addEventListener('change', (event) => {
     e.preventDefault();
   });
 })();
+
+// Smooth padding tighten on scroll for Boss Siomai sections
+(function initPaddingScrollEffect() {
+  const targets = document.querySelectorAll('.siomai-why, .siomai-packages');
+  if (!targets.length) return;
+
+  const onScroll = () => {
+    if (window.scrollY > 24) {
+      document.body.classList.add('scroll-tight');
+    } else {
+      document.body.classList.remove('scroll-tight');
+    }
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+
+// Package modal + filters
+(function initPackageVisuals() {
+  const modal = document.getElementById('packageModal');
+  const modalImg = document.getElementById('packageModalImg');
+  const closeBtn = modal ? modal.querySelector('.package-modal-close') : null;
+  const backdrop = modal ? modal.querySelector('.package-modal-backdrop') : null;
+  const previews = document.querySelectorAll('.package-preview');
+  const filterButtons = document.querySelectorAll('[data-package-filter]');
+  const cards = document.querySelectorAll('.siomai-package-card');
+
+  if (modal && modalImg) {
+    const open = (src) => {
+      modalImg.src = src;
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+    };
+    const close = () => {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      modalImg.removeAttribute('src');
+    };
+
+    previews.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const src = btn.getAttribute('data-poster');
+        if (src) open(src);
+      });
+    });
+
+    [closeBtn, backdrop].forEach(el => {
+      if (el) el.addEventListener('click', close);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) close();
+    });
+  }
+
+  if (filterButtons.length && cards.length) {
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const val = btn.dataset.packageFilter;
+        filterButtons.forEach(b => b.classList.toggle('active', b === btn));
+        cards.forEach(card => {
+          const type = card.dataset.packageType || 'all';
+          const show = val === 'all' || type === val;
+          card.style.display = show ? '' : 'none';
+        });
+      });
+    });
+  }
+})();
+
+// Daily countdown timer for urgency bar
+(function initCountdown() {
+  const el = document.getElementById('countdown');
+  if (!el) return;
+  const tick = () => {
+    const now = new Date();
+    const end = new Date();
+    end.setHours(23, 59, 59, 999);
+    let diff = Math.max(0, end - now);
+    const hrs = String(Math.floor(diff / 3_600_000)).padStart(2, '0');
+    diff %= 3_600_000;
+    const mins = String(Math.floor(diff / 60_000)).padStart(2, '0');
+    diff %= 60_000;
+    const secs = String(Math.floor(diff / 1000)).padStart(2, '0');
+    el.textContent = `${hrs}:${mins}:${secs}`;
+  };
+  tick();
+  setInterval(tick, 1000);
+})();
+
+// Floating CTA click scroll to contact form
+(function initFloatingCta() {
+  // CTA removed per latest request
+})();
