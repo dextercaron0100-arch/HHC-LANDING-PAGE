@@ -4715,7 +4715,7 @@ body.modal-open {
 .bigstop-page .hero-video-thumb {
   position: static;
   transform: none;
-  z-index: 4;
+  z-index: 30;
   width: clamp(320px, 32vw, 420px);
   margin-left: auto;
   border-radius: 14px;
@@ -8138,9 +8138,9 @@ body.modal-open {
 
 .audio-toggle {
   position: fixed;
-  right: clamp(12px, 2vw, 18px);
-  bottom: clamp(12px, 2vw, 18px);
-  z-index: 40; /* sits below video thumb */
+  right: clamp(14px, 2vw, 20px);
+  bottom: clamp(14px, 2vw, 20px);
+  z-index: 10; /* keep below video thumb */
   padding: 0.6rem 1rem;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.35);
