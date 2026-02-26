@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -6,8 +6,354 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F5F4F0;
+      --white: #FFFFFF;
+      --ink: #111110;
+      --ink-mid: #555552;
+      --ink-light: #999994;
+      --accent: #1A6B5A;
+      --accent-light: #E8F2F0;
+      --border: #E0DED8;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* CONTENT WRAP */
+    .content-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 60px;
+    }
+
+    /* HERO */
+    .seals-hero {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .hero-left {
+      padding: 80px 60px 80px 0;
+      border-right: 1px solid var(--border);
+    }
+    .tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 5px 12px;
+      border-radius: 4px;
+      margin-bottom: 28px;
+    }
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(38px, 5vw, 60px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.04;
+      color: var(--ink);
+      margin-bottom: 22px;
+    }
+    h1 em { font-style: normal; color: var(--accent); }
+    .hero-desc {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--ink-mid);
+      max-width: 400px;
+    }
+    .hero-right {
+      padding: 80px 0 80px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 32px;
+    }
+    .stat-row { display: flex; gap: 48px; }
+    .stat-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 44px;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-num span { color: var(--accent); font-size: 30px; }
+    .stat-label {
+      font-size: 11px;
+      color: var(--ink-light);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .divider-h { height: 1px; background: var(--border); }
+    .hero-quote {
+      font-size: 13px;
+      color: var(--ink-mid);
+      line-height: 1.75;
+      padding-left: 16px;
+      border-left: 2px solid var(--accent);
+    }
+
+    /* SECTION LABEL */
+    .section-label {
+      padding: 56px 0 36px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .section-label-text {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      white-space: nowrap;
+    }
+    .section-label-line { flex: 1; height: 1px; background: var(--border); }
+
+    /* CREDENTIALS LIST */
+    .creds-list {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--white);
+    }
+    .cred-row {
+      display: grid;
+      grid-template-columns: 64px 1fr auto;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.2s;
+    }
+    .cred-row:last-child { border-bottom: none; }
+    .cred-row:hover { background: #FAFAF8; }
+    .cred-index {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--ink-light);
+      border-right: 1px solid var(--border);
+      align-self: stretch;
+      letter-spacing: 0.04em;
+    }
+    .cred-body {
+      padding: 28px 32px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .cred-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--accent-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .cred-icon svg {
+      width: 20px; height: 20px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .cred-info h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 5px;
+    }
+    .cred-info p {
+      font-size: 13px;
+      color: var(--ink-mid);
+      line-height: 1.65;
+      max-width: 540px;
+    }
+    .cred-status { padding: 28px 32px; }
+    .pill {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 14px;
+      border-radius: 100px;
+      background: var(--accent-light);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .pill-dot {
+      width: 7px; height: 7px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: blink 2.4s ease infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.45; transform: scale(0.7); }
+    }
+
+    /* BOTTOM */
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 20px 0 80px;
+    }
+    .trust-card {
+      background: var(--accent);
+      border-radius: 12px;
+      padding: 52px 44px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .trust-card h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #fff;
+      line-height: 1.15;
+    }
+    .trust-card p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.7);
+    }
+    .btn-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 7px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      width: fit-content;
+      margin-top: 10px;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .btn-white:hover { opacity: 0.9; transform: translateY(-1px); }
+    .btn-white svg { width: 14px; height: 14px; transition: transform 0.2s; }
+    .btn-white:hover svg { transform: translateX(3px); }
+
+    .info-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 52px 44px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .info-card-label {
+      font-family: 'Syne', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ink-light);
+    }
+    .checklist { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 14px;
+      color: var(--ink-mid);
+      line-height: 1.65;
+    }
+    .check {
+      width: 20px; height: 20px;
+      background: var(--accent-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .check svg {
+      width: 11px; height: 11px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* FOOTER */
+    .seals-footer {
+      border-top: 1px solid var(--border);
+      background: var(--white);
+      padding: 22px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-text { font-size: 12px; color: var(--ink-light); }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .anim { opacity: 0; animation: fadeUp 0.55s ease forwards; }
+    .d1 { animation-delay: 0.05s; }
+    .d2 { animation-delay: 0.15s; }
+    .d3 { animation-delay: 0.25s; }
+    .d4 { animation-delay: 0.35s; }
+    .d5 { animation-delay: 0.45s; }
+    .d6 { animation-delay: 0.55s; }
+    .d7 { animation-delay: 0.65s; }
+
+    @media (max-width: 860px) {
+      .content-wrap { padding-left: 24px; padding-right: 24px; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-left { border-right: none; border-bottom: 1px solid var(--border); padding: 56px 0; }
+      .hero-right { padding: 48px 0; }
+      .bottom-grid { grid-template-columns: 1fr; }
+      .cred-body { padding: 20px; gap: 16px; }
+      .cred-status { padding: 20px; }
+    }
+  </style>
 </head>
 <body>
   <!-- NAVBAR -->
@@ -59,7 +405,7 @@
         <a href="index.html#franchises" class="btn-outline">View Opportunities</a>
         <a href="index.html#contact" class="btn-primary">
           Franchise Now
-          <span>→</span>
+          <span>â†’</span>
         </a>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
           <span></span>
@@ -70,95 +416,134 @@
   </header>
 
   <main>
-    <!-- PAGE HERO -->
-    <section class="page-hero">
-      <div class="container">
-        <p class="section-kicker">About Us</p>
-        <h1 class="page-hero-title">Seals of Approval</h1>
-        <p class="page-hero-subtitle">Certified, registered, and trusted by industry authorities</p>
-      </div>
-    </section>
-
-    <!-- SEALS CONTENT -->
-    <section class="section page-content">
-      <div class="container">
-        <div class="content-card">
-          <p class="intro-text">
-            HHC Franchise Hub is recognized and accredited by leading industry organizations, ensuring our franchisees receive world-class support and legitimate business opportunities. Our certifications reflect our commitment to transparency, compliance, and excellence.
-          </p>
-        </div>
-
-        <div class="seals-page-grid">
-          <div class="seal-card">
-            <div class="seal-card-icon">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M9 12l2 2 4-4"/>
-                <path d="M12 3l8 4.5v6c0 3.5-3.5 6.5-8 9.5-4.5-3-8-6-8-9.5v-6L12 3z"/>
-              </svg>
-            </div>
-            <h3>DTI Registered</h3>
-            <p>Registered with the Department of Trade and Industry, ensuring our business operations meet all government standards and requirements for legitimate franchise operations.</p>
+    <div class="seals-hero">
+      <div class="content-wrap">
+        <div class="hero-inner anim d1">
+          <div class="hero-left">
+            <span class="tag">About Us</span>
+            <h1>Seals of<br><em>Approval.</em></h1>
+            <p class="hero-desc">HHC Franchise Hub is recognized and accredited by leading industry organizations â€” ensuring every partner receives legitimate, compliant, and world-class opportunities.</p>
           </div>
-
-          <div class="seal-card">
-            <div class="seal-card-icon">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="3" y="4" width="18" height="16" rx="2"/>
-                <path d="M7 8h10M7 12h6"/>
-              </svg>
+          <div class="hero-right">
+            <div class="stat-row">
+              <div>
+                <div class="stat-num">4<span>+</span></div>
+                <div class="stat-label">Certifications</div>
+              </div>
+              <div>
+                <div class="stat-num">100<span>%</span></div>
+                <div class="stat-label">Compliant</div>
+              </div>
             </div>
-            <h3>SEC Registered</h3>
-            <p>Officially registered with the Securities and Exchange Commission as a legitimate corporation, providing our partners with the assurance of a properly structured business entity.</p>
-          </div>
-
-          <div class="seal-card">
-            <div class="seal-card-icon">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                <circle cx="9" cy="7" r="4"/>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
-              </svg>
-            </div>
-            <h3>PFA Member</h3>
-            <p>Proud member of the Philippine Franchise Association, connecting us with the country's leading franchise community and ensuring adherence to industry best practices.</p>
-          </div>
-
-          <div class="seal-card">
-            <div class="seal-card-icon">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
-              </svg>
-            </div>
-            <h3>BIR Compliant</h3>
-            <p>Fully compliant with Bureau of Internal Revenue requirements, ensuring all tax obligations are met and providing franchisees with proper documentation for their businesses.</p>
+            <div class="divider-h"></div>
+            <p class="hero-quote">Our certifications reflect our commitment to transparency, compliance, and excellence across all franchise operations.</p>
           </div>
         </div>
-
-        <div class="trust-message">
-          <h3>Your Trust Is Our Priority</h3>
-          <p>These certifications and memberships demonstrate our commitment to operating with integrity and transparency. When you partner with HHC Franchise Hub, you're partnering with a company that values compliance and legitimacy above all.</p>
-        </div>
-
-        <div class="page-cta">
-          <a href="index.html#contact" class="btn-gold">Partner With Us</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-links">
-        <a href="#">Terms and Conditions</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">FAQs</a>
-      </div>
-      <div class="footer-copyright">
-        <span id="yearSpan"></span> HHC Franchise Hub. All Rights Reserved
       </div>
     </div>
+
+    <div class="content-wrap">
+      <div class="section-label anim d2">
+        <span class="section-label-text">Credentials</span>
+        <div class="section-label-line"></div>
+      </div>
+
+      <div class="creds-list anim d3">
+        <div class="cred-row">
+          <div class="cred-index">01</div>
+          <div class="cred-body">
+            <div class="cred-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="cred-info">
+              <h3>IPO Registered</h3>
+              <p>Registered with the Intellectual Property Office, ensuring our trademarks and brand assets are protected and compliant for legitimate franchise operations.</p>
+            </div>
+          </div>
+          <div class="cred-status"><div class="pill"><div class="pill-dot"></div>Active</div></div>
+        </div>
+
+        <div class="cred-row">
+          <div class="cred-index">02</div>
+          <div class="cred-body">
+            <div class="cred-icon">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <div class="cred-info">
+              <h3>SEC Registered</h3>
+              <p>Officially registered with the Securities and Exchange Commission as a legitimate corporation, providing partners with assurance of a properly structured business entity.</p>
+            </div>
+          </div>
+          <div class="cred-status"><div class="pill"><div class="pill-dot"></div>Active</div></div>
+        </div>
+
+        <div class="cred-row">
+          <div class="cred-index">03</div>
+          <div class="cred-body">
+            <div class="cred-icon">
+              <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="cred-info">
+              <h3>PFA Member</h3>
+              <p>Proud member of the Philippine Franchise Association, connecting us with the country's leading franchise community and ensuring adherence to industry best practices.</p>
+            </div>
+          </div>
+          <div class="cred-status"><div class="pill"><div class="pill-dot"></div>Member</div></div>
+        </div>
+
+        <div class="cred-row">
+          <div class="cred-index">04</div>
+          <div class="cred-body">
+            <div class="cred-icon">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <div class="cred-info">
+              <h3>BIR Compliant</h3>
+              <p>Fully compliant with Bureau of Internal Revenue requirements, ensuring all tax obligations are met and providing franchisees with proper documentation for their businesses.</p>
+            </div>
+          </div>
+          <div class="cred-status"><div class="pill"><div class="pill-dot"></div>Compliant</div></div>
+        </div>
+      </div>
+
+      <div class="bottom-grid">
+        <div class="trust-card anim d5">
+          <h2>Your Trust Is Our Priority</h2>
+          <p>These certifications demonstrate our commitment to operating with integrity and transparency. When you partner with HHC Franchise Hub, you're partnering with a company that values compliance and legitimacy above all.</p>
+          <a href="index.html#contact" class="btn-white">
+            Partner With Us
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="info-card anim d6">
+          <div class="info-card-label">Why It Matters</div>
+          <ul class="checklist">
+            <li>
+              <div class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              Government-recognized operations with full regulatory compliance at every level.
+            </li>
+            <li>
+              <div class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              Structured corporate entity offering transparency and accountability to all partners.
+            </li>
+            <li>
+              <div class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              Industry membership ensuring adherence to best franchise practices in the Philippines.
+            </li>
+            <li>
+              <div class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              Full tax compliance with proper documentation for every franchisee operation.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="seals-footer">
+    <span class="footer-text">Â© 2025 HHC Franchise Hub. All rights reserved.</span>
+    <span class="footer-text">IPO Â· SEC Â· PFA Â· BIR â€” Certified &amp; Compliant</span>
   </footer>
 
   <script>
@@ -171,11 +556,11 @@
         navLinks.classList.toggle('open');
       });
     }
-    
-    // Set year
-    document.getElementById('yearSpan').textContent = new Date().getFullYear() + ' ©';
   </script>
+  <script src="script.js"></script>
 </body>
 </html>
+
+
 
 
